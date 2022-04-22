@@ -8,11 +8,13 @@ const router = express.Router()
 router.get('/', (req, res, next) => {
     // Example of response body: 
     // [{ "resource_id":1, "resource_name":"foo","resource_description":null }]
+    res.send('GET resources')
 })
 
 router.post('/', (req, res, next) => {
     // Example of response body: 
     // { "resource_id":1, "resource_name":"foo", "resource_description":null }
+    res.send('POST resources')
 })
 
 

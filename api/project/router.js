@@ -5,12 +5,15 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
-    //Example of response body: 
+    // Example of response body: 
     // [{ "project_id":1, "project_name":"bar", "project_description":null, "project_completed":false }]
+    res.send('Get Projects')
 })
 
 router.post('/', (req, res, next) => {
-    
+    // Example of response body: 
+    // { "project_id":1,"project_name":"bar","project_description":null,"project_completed":false }
+    res.send('Post Projects')
 })
 
 
