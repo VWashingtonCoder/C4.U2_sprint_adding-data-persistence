@@ -22,3 +22,12 @@
         - resource_id (required and points to an actual resource_id in the resource table - FOREIGN_KEY: integer, unsigned, notNullable, references('resource_id'), inTable('resources'))
         - project_id (required and points to an actual project_id in the projects table - FOREIGN_KEY: integer, unsigned, notNullable, references('project_id'), inTable('projects'))
 */
+
+/** Responses
+    * Projects-GET
+        [{ 
+            "project_id": 1, 
+            "project_name": "bar", 
+            "project_description": null, 
+            "project_completed": false 
+        }]
