@@ -11,6 +11,7 @@ async function getProjects() {
 
     for(let project of projectsResults){
         const proj = project
+        
         projects.push({
             project_id: proj.project_id,
             project_name: proj.project_name,
@@ -31,7 +32,4 @@ async function createProject(project) {
         })
 }
 
-module.exports = {
-    getProjects,
-    createProject
-} 
+module.exports = { getProjects, createProject } 
