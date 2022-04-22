@@ -1,4 +1,5 @@
 // build your `/api/tasks` router here
+const { response } = require('express')
 const express = require('express')
 const Tasks = require('./model')
 
@@ -13,9 +14,11 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-    // Example of response body: 
-    // { "task_id":1,"task_description":"baz","task_notes":null,"task_completed":false,"project_id:1 }
-    res.send('POST tasks')
+    Tasks.createTask(req.body)
+        .then(task => {
+            res.status(201).json(task)
+        })
+        .catch(next)
 })
 
 

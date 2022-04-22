@@ -25,8 +25,24 @@ async function getTasks(){
         })
     }
     
-    
     return tasks
 } 
 
-module.exports = { getTasks }
+async function createTask(task){
+    const [task_id] = await db('tasks').insert(task)
+
+    return getTasks()
+        .then(tasks => {
+            const currTask = tasks.find(task => task.task_id === task_id)
+            const newTask = {
+                task_id: currTask.task_id,
+                task_description: currTask.task_description,
+                task_notes: currTask.task_notes,
+                task_completed: currTask.task_completed,
+                project_id: task.project_id
+            }
+            return newTask
+        })
+}
+
+module.exports = { getTasks, createTask }
