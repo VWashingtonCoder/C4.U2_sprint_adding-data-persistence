@@ -39,4 +39,12 @@
                 "project_description": null,
                 "project_completed": false 
             }
+    * Resources
+        - GET
+            [{
+                "resource_id":1,
+                "resource_name":"foo",
+                "resource_description":null
+            }]
+
             
