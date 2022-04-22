@@ -46,5 +46,11 @@
                 "resource_name":"foo",
                 "resource_description":null
             }]
+        - POST
+            { 
+                "resource_id":1, 
+                "resource_name":"foo", 
+                "resource_description":null 
+            }
 
             

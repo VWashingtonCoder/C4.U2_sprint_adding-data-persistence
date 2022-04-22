@@ -13,9 +13,11 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-    // Example of response body: 
-    // { "resource_id":1, "resource_name":"foo", "resource_description":null }
-    res.send('POST resources')
+   Resources.createResource(req.body)
+    .then(resource => {
+        res.status(200).json(resource)
+    })
+    .catch(next)
 })
 
 
