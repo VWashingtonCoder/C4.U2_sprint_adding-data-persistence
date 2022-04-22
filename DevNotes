@@ -1,0 +1,24 @@
+/** Tables
+    * projects
+        - project_id (primary key - increments)
+        - project_name (required - text, notNullable)
+        - project_description (optional - text)
+        - project_completed (defaults it to false (integer 0) if not provided - boolean)
+    
+    * resource
+        - resource_id (primary key - increments)
+        - resource_name (required and unique - text, notNullable, unique)
+        - resource_description (optional - text)
+    
+    * tasks - steps needed to complete a project
+        - task_id (primary key - increments)
+        - task_description (required - text, notNullable)
+        - task_notes (optional - text)
+        - task_completed (defaults it to false (integer 0) if not provided - boolean)
+        - project_id (required and points to an actual project_id in the projects table - FOREIGN_KEY: integer, unsigned, notNullable, references('project_id'), inTable('projects'))
+    
+    * project_resources - connects a resource and a project
+        - assignment_id (primary key - ['resource_id, project_id'])
+        - resource_id (required and points to an actual resource_id in the resource table - FOREIGN_KEY: integer, unsigned, notNullable, references('resource_id'), inTable('resources'))
+        - project_id (required and points to an actual project_id in the projects table - FOREIGN_KEY: integer, unsigned, notNullable, references('project_id'), inTable('projects'))
+*/
