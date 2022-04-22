@@ -16,9 +16,17 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-    // Example of response body: 
-    // { "project_id":1,"project_name":"bar","project_description":null,"project_completed":false }
-    res.send('Post Projects')
+    Projects.createProject(req.body)
+        .then(project => {
+            console.log(project)
+            res.status(201).json(project)
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({
+                message: 'could not post new project'
+            })
+        })
 })
 
 

@@ -24,10 +24,19 @@
 */
 
 /** Responses
-    * Projects-GET
-        [{ 
-            "project_id": 1, 
-            "project_name": "bar", 
-            "project_description": null, 
-            "project_completed": false 
-        }]
+    * Projects
+        -GET
+            [{ 
+                "project_id": 1, 
+                "project_name": "bar", 
+                "project_description": null, 
+                "project_completed": false 
+            }]
+        - POST
+            { 
+                "project_id": 1,
+                "project_name": "bar",
+                "project_description": null,
+                "project_completed": false 
+            }
+            
